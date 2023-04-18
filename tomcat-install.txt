@@ -1,0 +1,50 @@
+install java -   yum install java -y
+go to root user -  sudo -i
+go to opt folder -  cd /opt
+install apache here -  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.74/bin/apache-tomcat-9.0.74.tar.gz
+untar a file -  tar -xvzf tomcat-9.0.74.tar.gz
+ =========================
+rename a untared file -  mv <file name> <prefered name>
+ ========================
+ go to bin directory -  cd/opt/tomcat9/bin
+and list all files -  ll
+ ========================
+ to start tomact - ./startup.sh
+ to stop tomcat -  ./shutdown.sh
+===========================
+ after starting it open it in the broswer by entering your ppublic ip address with :8080 port number
+ tomcat opens but you cant open manager app
+ =========================
+to open manager app ,search for context.xml file
+
+  find / -name context.xml
+
+edit the host manager file and manager file under webapps ,for doing this enter the command
+
+ vim  /opt/tomcat9/webapps/host-manager/META-INF/context.xml
+
+  make this as comment line by adding brackets 
+ <!--  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+do the same for this command also,
+ 
+ vim /opt/tomcat9/webapps/manager/META-INF/context.xml
+
+=======================================================
+ again shutdown and startup the tomcat
+ ======================================================
+now the Manager app allows you to access but it asks username and password ,in order to change it enter below command
+ go to  /opt/tomcat9/conf/ directory
+  and enter following command
+   vim tomcat-users.xml
+  go to broswer and come back to window there will two lines of commands something like < role rolename----  copy it
+and paste it in vim editor and edit it , add your username and password and save it
+===============================================================
+ shutdown and startup your tomcat
+and open browser go to manger app enter the given username and password and it opens up
+==============================================================
+
+thats it installation done  
+
+
