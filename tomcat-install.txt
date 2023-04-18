@@ -1,3 +1,5 @@
+=====Madan kumar A=========
+
 install java -   yum install java -y
 go to root user -  sudo -i
 go to opt folder -  cd /opt
