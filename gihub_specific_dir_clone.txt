@@ -1,0 +1,19 @@
+ git remote add -f origin <git repo url> 
+git remote -v
+git config core.sparseCheckout true
+git sparse-checkout set <directory name in github which you want to clone>
+git pull origin <branch name in which that direc is>
+*********************************************************
+after that change the remote location to your url 
+
+git remote set-url origin <your repo url>
+git init
+git status
+git add
+git commit
+git remote add origin <git repo url>
+git push origin <branch name>
+   **giv uaserid
+    ** personal access token
+*******************************************************
+ your files will be moved
