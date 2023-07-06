@@ -1,0 +1,19 @@
+sudo apt update
+sudo apt install openjdk-11-jdk 
+java --version
+sudo apt install unzip
+adduser sonarqube
+usermod -aG sudo sonarqube
+cd /opt
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
+unzip sonarqube-8.9.10.61524.zip
+mv sonarqube-8.9.10.61524.zip sonar
+chown -R sonarqube:sonarqube sonar
+cd /sonar/bin/linux-x86-64
+ls
+vim sonar.sh
+      (modify RUN_AS_USER=sonarqube)
+sh sonar.sh status
+sh sonar.sh start
+sh sonar.sh status (to confirm)
+lsof -i:9000
