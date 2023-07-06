@@ -5,6 +5,7 @@ java --version
 sudo apt install unzip
 adduser sonarqube
 usermod -aG sudo sonarqube
+id sonarqube
 cd /opt
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
 unzip sonarqube-8.9.10.61524.zip
